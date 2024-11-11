@@ -5,6 +5,7 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,11 +33,3 @@ jobs:
 
       - name: Run tests
         run: mvn test
-
-      # Upload test results as an artifact
-      - name: Upload test reports
-        if: always()  # Ensure the step runs even if previous steps fail
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-reports
-          path: target/surefire-reports/
