@@ -2,12 +2,9 @@ name: Rest Assured and Java CI with Maven
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main, master ]
   pull_request:
-    branches:
-      - main
-
+    branches: [ main, master ]
 jobs:
   build:
     runs-on: ubuntu-latest
